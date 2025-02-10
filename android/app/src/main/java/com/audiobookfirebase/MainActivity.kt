@@ -1,4 +1,4 @@
-package com.audiobook
+package com.audiobookfirebase
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
