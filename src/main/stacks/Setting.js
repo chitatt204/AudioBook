@@ -17,8 +17,10 @@ import {AppContext} from '../../AppContext';
 
 const {width} = Dimensions.get('window');
 const avtSize = width * 0.192;
+
 const Setting = ({navigation}) => {
-  const {userEmail} = useContext(AppContext);
+  const {userEmail, setIsLogin} = useContext(AppContext);
+
   const dispatch = useDispatch();
 
   const handleViewProfile = () => {
@@ -70,7 +72,11 @@ const Setting = ({navigation}) => {
             <Text style={styles.tagText}>About Audibooks</Text>
           </TouchableOpacity>
           <View style={styles.footer}>
-            <TouchableOpacity style={styles.btnContainer}>
+            <TouchableOpacity
+              style={styles.btnContainer}
+              onPress={() => {
+                setIsLogin(false);
+              }}>
               <Text style={styles.btnLabel}>Log out</Text>
             </TouchableOpacity>
           </View>

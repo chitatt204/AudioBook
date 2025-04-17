@@ -101,6 +101,8 @@ const Search = ({navigation}) => {
   const userGenres = useSelector(
     state => state.genreOfUser?.userGenreData?.data,
   );
+  console.log(userGenres);
+  
   const addToHistoryData = useSelector(
     state => state.addToSearchHistory?.addToHistoryData,
   );

@@ -44,6 +44,16 @@ export const getTopicsAPI = createAsyncThunk('users/getTopics', async email => {
     console.log(error);
   }
 });
+export const setNotFirstLogin = createAsyncThunk('users/setNotFirst', async email => {
+  try {
+    const response = await AxiosInstance().get(
+      `users/setNotFirst?email=${email}`,
+    );
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+});
 export const addTopicsAPI = createAsyncThunk('users/addGenres', async data => {
   try {
     const response = await AxiosInstance().put('users/addGenres', data);

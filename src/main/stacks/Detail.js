@@ -25,7 +25,9 @@ const Detail = props => {
   const {navigation, route} = props;
   const obj = props.route?.params?.item;
   const genres = obj?.genres;
-
+  useEffect(() => {
+    console.log(genres);
+  }, []);
   const {userEmail} = useContext(AppContext);
   const [isBookmark, setIsBookmark] = useState(false);
 

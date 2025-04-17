@@ -75,11 +75,15 @@ import ShowListChapter from './stacks/ShowListChapter';
 import AllGenre from './stacks/AllGenre';
 import BooksOfGenre from './stacks/BooksOfGenre';
 import Profile from './stacks/Profile';
+import { AppContext } from '../AppContext';
 const Stack = createNativeStackNavigator();
+
 // stacks
 const MainNavigation = () => {
+  const {user}=useContext(AppContext);
+  const initRoute = user?.theFirst ? "Welcome":"Splash"
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName={initRoute}>
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="MainTabNavigation" component={MainTabNavigation} />
       <Stack.Screen name="Detail" component={Detail} />

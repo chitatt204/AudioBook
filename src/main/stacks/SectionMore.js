@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View, FlatList} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import HeaderComponent from '../../components/HeaderComponent';
 import BookItem from '../../components/BookItem';
 
@@ -7,7 +7,10 @@ const SectionMore = props => {
   const {navigation, route} = props;
   const data = props.route?.params?.data;
   const type = props.route?.params?.type;
-
+useEffect(()=>{
+  console.log(data);
+  
+},[])
   return (
     <View style={styles.container}>
       <HeaderComponent title={type} />
